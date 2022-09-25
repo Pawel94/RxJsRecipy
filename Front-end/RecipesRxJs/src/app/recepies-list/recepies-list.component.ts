@@ -12,8 +12,9 @@ import { RecipeService } from '../services/recipe-service/recipe.service';
 })
 export class RecepiesListComponent implements OnInit {
   constructor(private recipeService: RecipeService) {}
+  isFilterSet: boolean = false;
   filtredRecipes: Recipe[] = [];
-
+  filterName: string = 'Show filters';
   recipes$: Observable<Recipe[]> = this.recipeService.getListOfRecipes();
   filterRecipesAction$ = this.recipeService.filterRecipesAction$;
   filtredRecipes$ = combineLatest([
@@ -30,4 +31,17 @@ export class RecepiesListComponent implements OnInit {
     })
   );
   ngOnInit(): void {}
+
+  setFilterState() {
+    this.isFilterSet = !this.isFilterSet;
+    this.isFilterSet
+      ? (this.filterName = 'Hide filter')
+      : (this.filterName = 'Show filters');
+  }
+  filterState(): boolean {
+    return this.isFilterSet;
+  }
+  getClass(): string {
+    return this.isFilterSet ? 'col-9' : 'col-12';
+  }
 }
