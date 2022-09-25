@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <div class="col-2">
+      <app-filter-recipes></app-filter-recipes>
+    </div>
+    <div class="col-9">
+      <div *ngIf="filtredRecipes$ | async as recipes" class="row">
+        <div *ngFor="let item of recipes" class="col-4">
+          <img
+            class="card-img-top"
+            src="https://media.istockphoto.com/photos/lemon-cake-picture-id95019434?k=20&m=95019434&s=612x612&w=0&h=EUdBGe1Bus-2hI2S4QUnJRo6JxTHQFax8jW8aQlJf9k="
+            alt="Card image"
+          />
+          <div class="card-body">
+            <h5 class="card-title">{{ item.title }}</h5>
+            <p class="card-text">
+              {{ item.prepTime }}
+            </p>
+            <p class="card-text">
+              {{ item.rating }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
