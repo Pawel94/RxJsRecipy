@@ -9,6 +9,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FilterRecipesComponent } from './filter-recipes/filter-recipes.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { DetailsRecipyComponent } from './details-recipy/details-recipy.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     RecepiesListComponent,
     FilterRecipesComponent,
     NavbarComponent,
+    DetailsRecipyComponent,
   ],
   imports: [
     BrowserModule,

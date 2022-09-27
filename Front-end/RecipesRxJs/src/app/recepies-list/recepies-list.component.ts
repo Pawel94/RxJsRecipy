@@ -4,6 +4,8 @@ import { combineLatest } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 import { Recipe } from '../data/Recipe';
 import { RecipeService } from '../services/recipe-service/recipe.service';
+import { SharedDataService } from '../services/share-data/shared-data.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-recepies-list',
@@ -11,12 +13,16 @@ import { RecipeService } from '../services/recipe-service/recipe.service';
   styleUrls: ['./recepies-list.component.scss'],
 })
 export class RecepiesListComponent implements OnInit {
-  constructor(private recipeService: RecipeService) {}
+  constructor(
+    private recipeService: RecipeService,
+    private shareData: SharedDataService,
+    private router: Router
+  ) {}
   isFilterSet: boolean = false;
   filtredRecipes: Recipe[] = [];
   filterName: string = 'Show filters';
   recipes$: Observable<Recipe[]> = this.recipeService.getListOfRecipes();
-  filterRecipesAction$ = this.recipeService.filterRecipesAction$;
+  filterRecipesAction$ = this.shareData.filterRecipesAction$;
   filtredRecipes$ = combineLatest([
     this.recipes$,
     this.filterRecipesAction$,
@@ -43,5 +49,11 @@ export class RecepiesListComponent implements OnInit {
   }
   getClass(): string {
     return this.isFilterSet ? 'col-9' : 'col-12';
+  }
+
+  editRecipy(receipy: any) {
+    console.log('ads');
+    this.shareData.updateSelectedRecipe(receipy);
+    this.router.navigate(['/details']);
   }
 }
