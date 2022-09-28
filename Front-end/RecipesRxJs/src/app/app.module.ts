@@ -10,6 +10,8 @@ import { FilterRecipesComponent } from './filter-recipes/filter-recipes.componen
 import { NavbarComponent } from './navbar/navbar.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DetailsRecipyComponent } from './details-recipy/details-recipy.component';
+import { RecipeCreationComponent } from './recipe-creation/recipe-creation.component';
+import { EditRecipyComponent } from './edit-recipy/edit-recipy.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { DetailsRecipyComponent } from './details-recipy/details-recipy.componen
     FilterRecipesComponent,
     NavbarComponent,
     DetailsRecipyComponent,
+    RecipeCreationComponent,
+    EditRecipyComponent,
   ],
   imports: [
     BrowserModule,

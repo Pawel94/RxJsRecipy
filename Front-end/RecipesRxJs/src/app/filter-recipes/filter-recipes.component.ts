@@ -19,7 +19,6 @@ export class FilterRecipesComponent implements OnInit {
   ngOnInit(): void {}
 
   onSubmit() {
-    // TODO: Use EventEmitter with form value
     console.warn(this.profileForm.value);
     this.shareData.setFilterForRecipe(this.profileForm.value);
   }
