@@ -23,6 +23,7 @@ export class RecepiesListComponent implements OnInit {
   filterName: string = 'Show filters';
   recipes$: Observable<Recipe[]> = this.recipeService.getListOfRecipes();
   filterRecipesAction$ = this.shareData.filterRecipesAction$;
+  filterOptions$ = this.shareData.showFilterOptions$;
   filtredRecipes$ = combineLatest([
     this.recipes$,
     this.filterRecipesAction$,
@@ -38,12 +39,6 @@ export class RecepiesListComponent implements OnInit {
   );
   ngOnInit(): void {}
 
-  setFilterState() {
-    this.isFilterSet = !this.isFilterSet;
-    this.isFilterSet
-      ? (this.filterName = 'Hide filter')
-      : (this.filterName = 'Show filters');
-  }
   filterState(): boolean {
     return this.isFilterSet;
   }

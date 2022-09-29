@@ -12,11 +12,18 @@ export class SharedDataService {
   private filterRecipeSubject$ = new BehaviorSubject<Recipe>({ title: '' });
   filterRecipesAction$ = this.filterRecipeSubject$.asObservable();
 
+  private showFilterOptionsSubject$ = new BehaviorSubject<boolean>(false);
+  showFilterOptions$ = this.showFilterOptionsSubject$.asObservable();
+
   constructor() {}
   updateSelectedRecipe(recipe: Recipe) {
     this.selectedRecipeSubject.next(recipe);
   }
   setFilterForRecipe(filter: any) {
     this.filterRecipeSubject$.next(filter);
+  }
+
+  updateFilterOptions(flag: boolean) {
+    this.showFilterOptionsSubject$.next(flag);
   }
 }

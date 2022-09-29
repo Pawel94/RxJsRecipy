@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { CategoryEnum } from '../data/CategoryEnum';
 import { RecipeService } from '../services/recipe-service/recipe.service';
 import { SharedDataService } from '../services/share-data/shared-data.service';
 @Component({
@@ -14,6 +15,9 @@ export class FilterRecipesComponent implements OnInit {
     category: new FormControl(''),
     tags: new FormControl(''),
   });
+
+  fileTypes = CategoryEnum;
+  keys = Object.keys;
   constructor(private shareData: SharedDataService) {}
 
   ngOnInit(): void {}

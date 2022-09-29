@@ -1,12 +1,8 @@
 <div class="container">
-  <button type="button" class="btn btn-secondary" (click)="setFilterState()">
-    {{ filterName }}
-  </button>
+  <div class="row m-2" *ngIf="filterOptions$ | async">
+    <app-filter-recipes></app-filter-recipes>
+  </div>
   <div class="row">
-    <div class="col-2" *ngIf="filterState()">
-      <app-filter-recipes></app-filter-recipes>
-    </div>
-    <!-- <div class="col-9"> -->
     <div [ngClass]="getClass()">
       <div *ngIf="filtredRecipes$ | async as recipes" class="row">
         <div *ngFor="let item of recipes" class="col-4">
