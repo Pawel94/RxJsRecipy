@@ -1,4 +1,6 @@
 export enum CategoryEnum {
-  X = 'X',
-  Y = 'Y',
+  SWEET = 'SWEET',
+  FISH = 'FISH',
+  FRUITS = 'FRUITS',
+  NONE = '-',
 }

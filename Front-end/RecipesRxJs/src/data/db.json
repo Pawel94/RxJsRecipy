@@ -34,6 +34,7 @@
         "1 tablespoon lemon juice"
       ],
       "cookingTime": "",
+      "category": "Sweet",
       "prepTime": "10",
       "steps": [
         "Step 1:Preheat the oven to 350 degrees F (175 degrees C). Grease a 9-inch square baking pan",
@@ -50,6 +51,7 @@
       "prepTime": "10",
       "cookTime": "35",
       "servings": 10,
+      "category": "Sweet",
       "ingredients": [
         " 1 cup white sugar",
         "½ cup butter",
@@ -76,6 +78,7 @@
       "cookTime": "35",
       "servings": 10,
       "rating": 3,
+      "category": "Sweet",
       "ingredients": [
         " 1 cup white sugar",
         "½ cup butter",
@@ -102,6 +105,7 @@
       "cookTime": "35",
       "servings": 10,
       "rating": 3,
+      "category": "Sweet",
       "ingredients": [
         " 1 cup white sugar",
         "½ cup butter",
@@ -128,6 +132,7 @@
       "cookTime": "35",
       "rating": 3,
       "servings": 10,
+      "category": "Sweet",
       "ingredients": [
         " 1 cup white sugar",
         "½ cup butter",
@@ -153,6 +158,7 @@
       "prepTime": "10",
       "cookTime": "35",
       "servings": 10,
+      "category": "Sweet",
       "rating": 3,
       "ingredients": [
         " 1 cup white sugar",
@@ -180,6 +186,7 @@
       "cookTime": "35",
       "rating": 3,
       "servings": 10,
+      "category": "Sweet",
       "ingredients": [
         " 1 cup white sugar",
         "½ cup butter",
@@ -205,6 +212,7 @@
       "prepTime": "10",
       "cookTime": "35",
       "servings": 10,
+      "category": "Fish",
       "rating": 3,
       "ingredients": [
         " 1 cup white sugar",
@@ -231,6 +239,7 @@
       "prepTime": "10",
       "cookTime": "35",
       "rating": 3,
+      "category": "Fruits",
       "servings": 10,
       "ingredients": [
         " 1 cup white sugar",
@@ -256,6 +265,7 @@
       "title": "Lemon pie",
       "prepTime": "10",
       "cookTime": "35",
+      "category": "Fruits",
       "rating": 3,
       "servings": 10,
       "ingredients": [
@@ -303,78 +313,36 @@
       "imageUrl": "chicken.jpg"
     },
     {
-      "id": 12,
-      "title": "sda",
-      "ingredients": "",
+      "title": "Nowy przepis",
+      "ingredients": "XD",
+      "cookingTime": 1,
+      "category": "SWEET",
+      "prepTime": 3,
+      "steps": "hahaha",
+      "imageUrl": "",
+      "id": 12
+    },
+    {
+      "title": "x",
+      "ingredients": "asd",
       "cookingTime": "",
+      "category": "FISH",
       "prepTime": "",
       "steps": "",
-      "imageUrl": ""
+      "rate": 8,
+      "imageUrl": "",
+      "id": 13
     },
     {
-      "id": 13,
-      "servings": 13
-    },
-    {
-      "servings": 13,
+      "title": "sad",
+      "ingredients": "asd",
+      "cookingTime": "",
+      "category": "FISH",
+      "prepTime": 2,
+      "steps": "dsad",
+      "rate": 10,
+      "imageUrl": "",
       "id": 14
-    },
-    {
-      "servings": 13,
-      "id": 15
-    },
-    {
-      "servings": 13,
-      "id": 16
-    },
-    {
-      "id": 123,
-      "servings": 13
-    },
-    {
-      "id": 1234,
-      "title": "ads",
-      "ingredients": "cz",
-      "cookingTime": "",
-      "prepTime": "",
-      "steps": "",
-      "imageUrl": ""
-    },
-    {
-      "title": "adasd",
-      "ingredients": "NOWE",
-      "cookingTime": "cacsac",
-      "prepTime": "",
-      "steps": "",
-      "imageUrl": "",
-      "id": 1235
-    },
-    {
-      "title": "CHUJNIA",
-      "ingredients": "",
-      "cookingTime": "",
-      "prepTime": "",
-      "steps": "",
-      "imageUrl": "",
-      "id": 1236
-    },
-    {
-      "title": "CHUJNIA2",
-      "ingredients": "",
-      "cookingTime": "",
-      "prepTime": "",
-      "steps": "",
-      "imageUrl": "",
-      "id": 1237
-    },
-    {
-      "id": 1238,
-      "title": "XD",
-      "ingredients": "",
-      "cookingTime": "",
-      "prepTime": "",
-      "steps": "",
-      "imageUrl": ""
     }
   ]
 }

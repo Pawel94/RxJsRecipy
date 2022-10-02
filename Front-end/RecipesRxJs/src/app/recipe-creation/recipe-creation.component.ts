@@ -1,8 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import {
+  AbstractControl,
+  AsyncValidatorFn,
+  FormControl,
+  FormGroup,
+  ValidationErrors,
+  Validators,
+} from '@angular/forms';
 import { Observable, of } from 'rxjs';
-import { catchError, concatMap, tap } from 'rxjs/operators';
-
+import { catchError, concatMap, map, tap } from 'rxjs/operators';
+import { CategoryEnum } from '../data/CategoryEnum';
 import { Recipe } from '../data/Recipe';
 import { RecipeService } from '../services/recipe-service/recipe.service';
 class ImageSnippet {
@@ -16,21 +23,33 @@ class ImageSnippet {
 export class RecipeCreationComponent implements OnInit {
   recipyForm = new FormGroup({
     //id: new FormControl(),
-    title: new FormControl(''),
+    title: new FormControl(
+      '',
+      [Validators.required],
+      [this.recipeService.usernameValidator()]
+    ),
     ingredients: new FormControl(''),
     cookingTime: new FormControl(''),
+    category: new FormControl(''),
     prepTime: new FormControl(''),
     steps: new FormControl(''),
+    rating: new FormControl(''),
     imageUrl: new FormControl(''),
   });
 
   selectedFile?: ImageSnippet;
   valueChanges$?: Observable<Recipe>;
 
+  currentRate = 0;
+  categoryEnmum = CategoryEnum;
+
+  enumKeys: any[] = [];
   saveSuccess(result: any) {
     console.log('Saved successfully');
   }
-  constructor(private recipeService: RecipeService) {}
+  constructor(private recipeService: RecipeService) {
+    this.enumKeys = Object.keys(this.categoryEnmum);
+  }
 
   ngOnInit(): void {}
 
