@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { combineLatest } from 'rxjs';
-import { map, tap } from 'rxjs/operators';
+import { map, merge, pluck, tap } from 'rxjs/operators';
 import { Recipe } from '../data/Recipe';
 import { RecipeService } from '../services/recipe-service/recipe.service';
 import { SharedDataService } from '../services/share-data/shared-data.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { CategoryEnum } from '../data/CategoryEnum';
 import { NgbRatingConfig } from '@ng-bootstrap/ng-bootstrap';
+import { Filter } from '../data/filter';
 @Component({
   selector: 'app-recepies-list',
   templateUrl: './recepies-list.component.html',
@@ -24,34 +25,42 @@ export class RecepiesListComponent implements OnInit {
   }
   isFilterSet: boolean = false;
   filtredRecipes: Recipe[] = [];
-  filterName: string = 'Show filters';
+
   recipes$: Observable<Recipe[]> = this.recipeService.getListOfRecipes();
-  filterRecipesAction$ = this.shareData.filterRecipesAction$;
+
+  filterRecipesAction$ = this.shareData.filterRecipesAction$.pipe(
+    map(
+      (response) =>
+        ({
+          title: response.title,
+          category: response.category,
+          rating: response.rating,
+        } as Filter)
+    )
+  );
+
   filterOptions$ = this.shareData.showFilterOptions$;
+
   filtredRecipes$ = combineLatest([
     this.recipes$,
     this.filterRecipesAction$,
   ]).pipe(
-    map(([recipes, filter]: [Recipe[], Recipe]) => {
+    map(([recipes, elementToFilter]: [Recipe[], Filter]) => {
       return recipes.filter(
-        (recipe) =>
-          recipe.title
+        (filteredElementList) =>
+          filteredElementList.title
             ?.toLowerCase()
-            .indexOf(filter?.title?.toLowerCase() ?? '') != -1
+            .indexOf(elementToFilter.title?.toLowerCase() ?? '') != -1 &&
+          filteredElementList.category
+            ?.toLowerCase()
+            .indexOf(elementToFilter.category?.toLowerCase() ?? '') != -1 &&
+          this.compareRatingsFilter(filteredElementList, elementToFilter)
       );
     })
   );
   ngOnInit(): void {}
 
-  filterState(): boolean {
-    return this.isFilterSet;
-  }
-  getClass(): string {
-    return this.isFilterSet ? 'col-9' : 'col-12';
-  }
-
   editRecipy(receipy: any) {
-    console.log('ads');
     this.shareData.updateSelectedRecipe(receipy);
     this.router.navigate(['/details']);
   }
@@ -65,5 +74,12 @@ export class RecepiesListComponent implements OnInit {
   setRating(item: Recipe): number {
     if (item.rating) return item.rating;
     else return 0;
+  }
+  private compareRatingsFilter(recipe: Recipe, filter: Filter): any {
+    let rateToCompare = 0;
+    if (filter.rating === undefined) return recipe;
+    if (recipe.rating !== undefined) rateToCompare = recipe.rating;
+    if (rateToCompare > filter.rating) return filter;
+    else recipe;
   }
 }

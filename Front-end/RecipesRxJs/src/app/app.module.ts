@@ -12,6 +12,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { DetailsRecipyComponent } from './details-recipy/details-recipy.component';
 import { RecipeCreationComponent } from './recipe-creation/recipe-creation.component';
 import { EditRecipyComponent } from './edit-recipy/edit-recipy.component';
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { EditRecipyComponent } from './edit-recipy/edit-recipy.component';
     DetailsRecipyComponent,
     RecipeCreationComponent,
     EditRecipyComponent,
+    HighlightDirective,
   ],
   imports: [
     BrowserModule,

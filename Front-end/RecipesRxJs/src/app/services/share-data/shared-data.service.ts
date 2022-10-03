@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { Filter } from 'src/app/data/filter';
 import { Recipe } from 'src/app/data/Recipe';
 
 @Injectable({
@@ -19,7 +20,7 @@ export class SharedDataService {
   updateSelectedRecipe(recipe: Recipe) {
     this.selectedRecipeSubject.next(recipe);
   }
-  setFilterForRecipe(filter: any) {
+  setFilterForRecipe(filter: Filter) {
     this.filterRecipeSubject$.next(filter);
   }
 

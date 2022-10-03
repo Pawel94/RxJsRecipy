@@ -37,13 +37,6 @@ export class RecipeService {
   }
 
   isRecipyAlreadyExists(title: string): Observable<any> {
-    console.log('dsa');
-    // return this.http.get<Recipe[]>(`${BASE_PATH}/recipies`).pipe(
-    //   share({
-    //     connector: () => new ReplaySubject(),
-    //     resetOnRefCountZero: true,
-    //     resetOnError: true,
-    //   }),
     return this.getListOfRecipes().pipe(
       flatMap((users) => users),
       find((e) => e.title?.toLowerCase() === title.toLowerCase()),

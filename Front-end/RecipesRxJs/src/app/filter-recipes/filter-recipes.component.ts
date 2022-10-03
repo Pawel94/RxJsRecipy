@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { Observable } from 'rxjs';
+
 import { CategoryEnum } from '../data/CategoryEnum';
-import { RecipeService } from '../services/recipe-service/recipe.service';
 import { SharedDataService } from '../services/share-data/shared-data.service';
 @Component({
   selector: 'app-filter-recipes',
@@ -11,19 +12,26 @@ import { SharedDataService } from '../services/share-data/shared-data.service';
 export class FilterRecipesComponent implements OnInit {
   profileForm = new FormGroup({
     title: new FormControl(''),
-    keyword: new FormControl(''),
+    rating: new FormControl(''),
     category: new FormControl(''),
-    tags: new FormControl(''),
   });
 
-  fileTypes = CategoryEnum;
+  category = CategoryEnum;
+  enumKeys: any[] = [];
+  fakeArray = new Array(10);
   keys = Object.keys;
-  constructor(private shareData: SharedDataService) {}
+  constructor(private shareData: SharedDataService) {
+    this.enumKeys = Object.keys(this.category);
+  }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.profileForm.valueChanges.subscribe((val) => {
+      console.warn(val);
+      this.shareData.setFilterForRecipe(val);
+    });
+  }
 
-  onSubmit() {
-    console.warn(this.profileForm.value);
-    this.shareData.setFilterForRecipe(this.profileForm.value);
+  ngOnDestroy(): void {
+    this.profileForm.reset();
   }
 }

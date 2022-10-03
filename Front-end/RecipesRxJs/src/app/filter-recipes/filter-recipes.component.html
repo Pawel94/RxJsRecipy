@@ -1,10 +1,6 @@
-<form
-  [formGroup]="profileForm"
-  (ngSubmit)="onSubmit()"
-  class="form-group form-inline"
->
+<form [formGroup]="profileForm" class="form-group form-inline">
   <div class="row align-items-center">
-    <div class="col-3">
+    <div class="col-4">
       <div class="form-group form-inline">
         <label for="">Title</label>
 
@@ -18,46 +14,39 @@
         />
       </div>
     </div>
-    <div class="col-3">
-      <div class="form-check form-check-inline">
-        <label for="keyword">Key Word</label>
-        <input
-          type="text"
-          class="form-control"
-          formControlName="keyword"
-          id="keyword"
-          aria-describedby="emailHelp"
-          placeholder="Enter key"
-        />
-      </div>
-    </div>
-    <div class="col-2">
-      <div class="form-check form-check-inline">
+
+    <div class="col-4">
+      <div class="form-group">
         <label for="exampleInputPassword1">Category</label>
-        <select class="form-select">
-          <option *ngFor="let symbol of keys(fileTypes)" [ngValue]="fileTypes">
-            {{ symbol }}
+        <select
+          class="form-select"
+          aria-label="Default select example"
+          formControlName="category"
+        >
+          <option value="" disabled selected>Category</option>
+          <option *ngFor="let name of enumKeys" [value]="name">
+            {{ name }}
           </option>
         </select>
       </div>
     </div>
-    <div class="col-2">
-      <div class="form-check">
-        <label for="tags">Tags</label>
-        <input
+    <div class="col-4">
+      <div class="form-check form-check-inline">
+        <label for="rating">Rate above:</label>
+        <select
           type="text"
           class="form-control"
-          id="tags"
-          placeholder="tags"
-          formControlName="tags"
-        />
-      </div>
-    </div>
-    <div class="col-1">
-      <div class="form-check">
-        <label for="tags"></label>
-        <button type="submit" class="btn btn-primary">Find!</button>
+          formControlName="rating"
+          id="rating"
+          aria-describedby="rating"
+          placeholder="rating"
+        >
+          <option *ngFor="let n of fakeArray; let indexmy = index">
+            {{ indexmy }}
+          </option>
+        </select>
       </div>
     </div>
   </div>
+  <br />
 </form>

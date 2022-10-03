@@ -19,16 +19,22 @@ export class EditRecipyComponent implements OnInit {
     cookingTime: new FormControl(''),
     prepTime: new FormControl(''),
     steps: new FormControl(''),
+    rating: new FormControl(''),
     imageUrl: new FormControl(''),
   });
 
+  currentRate = 0;
   valueChanges$?: Observable<Recipe>;
   valueChanges2$ = this.recipyForm.valueChanges.pipe(
     tap((x) => console.log(x))
   );
 
   selectedRecipy$ = this.shareService.selectedRecipeAction$.pipe(
-    tap((user) => this.recipyForm.patchValue(user))
+    tap((user) => {
+      this.recipyForm.patchValue(user);
+      console.log(user);
+      if (user.rating) this.currentRate = user.rating;
+    })
   );
 
   saveSuccess(result: any) {
