@@ -3,6 +3,7 @@
     class="alert alert-success"
     role="alert"
     *ngIf="successMessage$ | async as message"
+    @fade
   >
     {{ message }}
   </div>
@@ -10,6 +11,7 @@
     class="alert alert-danger"
     role="alert"
     *ngIf="errorMessage$ | async as message"
+    @fade
   >
     {{ message }}
   </div>

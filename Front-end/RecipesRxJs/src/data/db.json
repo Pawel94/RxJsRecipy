@@ -34,7 +34,7 @@
         "1 tablespoon lemon juice"
       ],
       "cookingTime": "",
-      "prepTime": "1",
+      "prepTime": "4",
       "steps": [
         "Step 1:Preheat the oven to 350 degrees F (175 degrees C). Grease a 9-inch square baking pan",
         "Step 2: Beat sugar and butter together in a mixing bowl using an electric mixer until light and fluffy. Beat in eggs and vanilla extract",
@@ -59,7 +59,7 @@
         "1 tablespoon lemon juice"
       ],
       "cookingTime": "",
-      "prepTime": "13",
+      "prepTime": "112",
       "steps": [
         "Step 1:Preheat the oven to 350 degrees F (175 degrees C). Grease a 9-inch square baking pan",
         "Step 2: Beat sugar and butter together in a mixing bowl using an electric mixer until light and fluffy. Beat in eggs and vanilla extract",
@@ -463,6 +463,17 @@
       "rating": "",
       "imageUrl": "",
       "id": 25
+    },
+    {
+      "title": "animation test",
+      "ingredients": "",
+      "cookingTime": "",
+      "category": "",
+      "prepTime": "",
+      "steps": "",
+      "rating": "",
+      "imageUrl": "",
+      "id": 26
     }
   ]
 }
