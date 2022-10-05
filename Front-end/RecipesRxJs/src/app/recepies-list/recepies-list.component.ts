@@ -9,10 +9,54 @@ import { Router } from '@angular/router';
 import { CategoryEnum } from '../data/CategoryEnum';
 import { NgbRatingConfig } from '@ng-bootstrap/ng-bootstrap';
 import { Filter } from '../data/filter';
+import {
+  animate,
+  keyframes,
+  query,
+  stagger,
+  state,
+  style,
+  transition,
+  trigger,
+} from '@angular/animations';
 @Component({
   selector: 'app-recepies-list',
   templateUrl: './recepies-list.component.html',
   styleUrls: ['./recepies-list.component.scss'],
+  animations: [
+    trigger('fadeSlideInOut', [
+      transition(':enter', [
+        style({ opacity: 0, transform: 'translateY(-10px)' }),
+        animate('600ms', style({ opacity: 1, transform: 'translateY(0)' })),
+      ]),
+      transition(':leave', [
+        animate('500ms', style({ opacity: 0, transform: 'translateY(10px)' })),
+      ]),
+    ]),
+    trigger('fadeInGrow', [
+      transition(':enter', [
+        query(':enter', [
+          style({ opacity: 0 }),
+          stagger('50ms', [animate('500ms', style({ opacity: 1 }))]),
+        ]),
+      ]),
+    ]),
+    trigger('listAnimation', [
+      transition('* <=> *', [
+        query(
+          ':enter',
+          [
+            style({ opacity: 0 }),
+            stagger('170ms', animate('600ms ease-out', style({ opacity: 1 }))),
+          ],
+          { optional: true }
+        ),
+        query(':leave', animate('200ms', style({ opacity: 0 })), {
+          optional: true,
+        }),
+      ]),
+    ]),
+  ],
 })
 export class RecepiesListComponent implements OnInit {
   constructor(

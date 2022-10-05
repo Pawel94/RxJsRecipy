@@ -1,9 +1,13 @@
 <div class="container">
-  <div class="row m-2" *ngIf="filterOptions$ | async">
+  <div class="row m-2" *ngIf="filterOptions$ | async" @fadeSlideInOut>
     <app-filter-recipes></app-filter-recipes>
   </div>
   <div class="row">
-    <div *ngIf="filtredRecipes$ | async as recipes" class="row m-2">
+    <div
+      *ngIf="filtredRecipes$ | async as recipes"
+      class="row m-2"
+      [@listAnimation]="recipes.length"
+    >
       <div
         *ngFor="let item of recipes"
         class="col-4 border p-4 mb-3"

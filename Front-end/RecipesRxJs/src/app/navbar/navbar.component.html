@@ -13,12 +13,14 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-item nav-link" href="/createRecipy">Create</a>
+      <a class="nav-item nav-link" href="/createRecipy" @changeText>Create</a>
     </div>
+
     <ng-container *ngIf="actualRoute$ | async"
       ><div
         class="navbar-nav"
         *ngIf="{ value: filterOptions$ | async } as flag"
+        @changeText
       >
         <a class="nav-item nav-link" (click)="setFilter(flag.value)">
           {{ filterName }}</a

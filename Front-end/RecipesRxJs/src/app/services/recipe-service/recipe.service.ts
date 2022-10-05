@@ -17,13 +17,17 @@ import {
   AsyncValidatorFn,
   ValidationErrors,
 } from '@angular/forms';
+import { NotificationService } from '../notification-service/notification.service';
 const BASE_PATH = 'http://localhost:4000';
 
 @Injectable({
   providedIn: 'root',
 })
 export class RecipeService {
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private notification: NotificationService
+  ) {}
 
   getListOfRecipes(): Observable<Recipe[]> {
     return this.http.get<Recipe[]>(`${BASE_PATH}/recipies`).pipe(
@@ -50,7 +54,15 @@ export class RecipeService {
     );
   }
   addNewRecipe(recipe: Recipe): Observable<Recipe> {
-    return this.http.post<Recipe>(`http://localhost:4000/recipies`, recipe);
+    return this.http
+      .post<Recipe>(`http://localhost:4000/recipies`, recipe)
+      .pipe(
+        tap((x) => console.log(x)),
+        catchError((err) => {
+          this.notification.setErrorMessage(err);
+          return of();
+        })
+      );
   }
   public uploadImage(image: File, fileToUpload?: File): Observable<any> {
     /* Not possible to do with JSON server*/

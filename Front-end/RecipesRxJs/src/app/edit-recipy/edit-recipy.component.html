@@ -1,4 +1,4 @@
-<div *ngIf="selectedRecipy$ | async; let recipe">
+<div *ngIf="selectedRecipy$ | async; let recipe" @fadeSlideInOut>
   <form [formGroup]="recipyForm" (ngSubmit)="editRecipy(recipe.id)">
     <div class="container">
       <div class="row">

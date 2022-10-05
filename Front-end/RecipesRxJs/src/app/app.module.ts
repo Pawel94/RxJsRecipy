@@ -13,7 +13,8 @@ import { DetailsRecipyComponent } from './details-recipy/details-recipy.componen
 import { RecipeCreationComponent } from './recipe-creation/recipe-creation.component';
 import { EditRecipyComponent } from './edit-recipy/edit-recipy.component';
 import { HighlightDirective } from './highlight.directive';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NotificationComponent } from './notification/notification.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +25,7 @@ import { HighlightDirective } from './highlight.directive';
     RecipeCreationComponent,
     EditRecipyComponent,
     HighlightDirective,
+    NotificationComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,6 +33,7 @@ import { HighlightDirective } from './highlight.directive';
     HttpClientModule,
     NgbModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

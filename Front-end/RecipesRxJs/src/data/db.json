@@ -34,24 +34,19 @@
         "1 tablespoon lemon juice"
       ],
       "cookingTime": "",
-      "category": "Sweet",
-      "prepTime": "10",
+      "prepTime": "1",
       "steps": [
         "Step 1:Preheat the oven to 350 degrees F (175 degrees C). Grease a 9-inch square baking pan",
         "Step 2: Beat sugar and butter together in a mixing bowl using an electric mixer until light and fluffy. Beat in eggs and vanilla extract",
         "Step 3: Sift flour and baking powder together in a separate bowl; add to creamed mixture. Pour in milk, lemon zest, and lemon juice and mix until you achieve a smooth batter. Spoon batter into the prepared pan.",
         "Step 4: Bake in the preheated oven until a toothpick inserted into the center comes out clean, about 35 minutes."
       ],
+      "rating": "",
       "imageUrl": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockphoto.com%2Fphotos%2Flemon-cake&psig=AOvVaw2mB3D9DZKiO1ZAyvTyjPUk&ust=1664190199288000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCIDq2eDlr_oCFQAAAAAdAAAAABAD",
       "id": 1
     },
     {
-      "id": 2,
       "title": "Lemon Pie",
-      "prepTime": "10",
-      "cookTime": "35",
-      "servings": 10,
-      "category": "Sweet",
       "ingredients": [
         " 1 cup white sugar",
         "½ cup butter",
@@ -63,13 +58,17 @@
         "1 tablespoon lemon zest",
         "1 tablespoon lemon juice"
       ],
+      "cookingTime": "",
+      "prepTime": "13",
       "steps": [
         "Step 1:Preheat the oven to 350 degrees F (175 degrees C). Grease a 9-inch square baking pan",
         "Step 2: Beat sugar and butter together in a mixing bowl using an electric mixer until light and fluffy. Beat in eggs and vanilla extract",
         "Step 3: Sift flour and baking powder together in a separate bowl; add to creamed mixture. Pour in milk, lemon zest, and lemon juice and mix until you achieve a smooth batter. Spoon batter into the prepared pan.",
         "Step 4: Bake in the preheated oven until a toothpick inserted into the center comes out clean, about 35 minutes."
       ],
-      "imageUrl": "lemon-pie.jpg"
+      "rating": "",
+      "imageUrl": "lemon-pie.jpg",
+      "id": 2
     },
     {
       "id": 3,
@@ -354,6 +353,116 @@
       "rating": 2,
       "imageUrl": "",
       "id": 15
+    },
+    {
+      "title": "Nowe cso",
+      "ingredients": "adads",
+      "cookingTime": 3,
+      "category": "FISH",
+      "prepTime": 3,
+      "steps": "XD",
+      "rating": 8,
+      "imageUrl": "",
+      "id": 16
+    },
+    {
+      "title": "cos nowe 2",
+      "ingredients": "dsa",
+      "cookingTime": 2,
+      "category": "FISH",
+      "prepTime": 3,
+      "steps": "",
+      "rating": 2,
+      "imageUrl": "",
+      "id": 17
+    },
+    {
+      "title": "XDD",
+      "ingredients": "XDD",
+      "cookingTime": 4,
+      "category": "FISH",
+      "prepTime": 1,
+      "steps": "adad",
+      "rating": "",
+      "imageUrl": "",
+      "id": 18
+    },
+    {
+      "title": "asd",
+      "ingredients": "da",
+      "cookingTime": 1,
+      "category": "SWEET",
+      "prepTime": 1,
+      "steps": "da",
+      "rating": "",
+      "imageUrl": "",
+      "id": 19
+    },
+    {
+      "title": "xasd",
+      "ingredients": "ada",
+      "cookingTime": 3,
+      "category": "FISH",
+      "prepTime": 2,
+      "steps": "dada",
+      "rating": 5,
+      "imageUrl": "",
+      "id": 20
+    },
+    {
+      "title": "xDDDD",
+      "ingredients": "",
+      "cookingTime": "",
+      "category": "",
+      "prepTime": "",
+      "steps": "",
+      "rating": "",
+      "imageUrl": "",
+      "id": 21
+    },
+    {
+      "title": "dada",
+      "ingredients": "dads",
+      "cookingTime": -1,
+      "category": "",
+      "prepTime": "",
+      "steps": "",
+      "rating": "",
+      "imageUrl": "",
+      "id": 22
+    },
+    {
+      "title": "xDs",
+      "ingredients": "dsa",
+      "cookingTime": 3,
+      "category": "FISH",
+      "prepTime": 2,
+      "steps": "df",
+      "rating": 8,
+      "imageUrl": "",
+      "id": 23
+    },
+    {
+      "title": "qwq",
+      "ingredients": "",
+      "cookingTime": "",
+      "category": "",
+      "prepTime": "",
+      "steps": "",
+      "rating": "",
+      "imageUrl": "",
+      "id": 24
+    },
+    {
+      "title": "New recipy",
+      "ingredients": "ad",
+      "cookingTime": 2,
+      "category": "FISH",
+      "prepTime": 2,
+      "steps": "dasd",
+      "rating": "",
+      "imageUrl": "",
+      "id": 25
     }
   ]
 }
