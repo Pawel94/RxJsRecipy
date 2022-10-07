@@ -15,6 +15,7 @@ import { EditRecipyComponent } from './edit-recipy/edit-recipy.component';
 import { HighlightDirective } from './highlight.directive';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NotificationComponent } from './notification/notification.component';
+import { AboutUsComponent } from './common/about-me/about-me.component';
 @NgModule({
   declarations: [
     AppComponent,

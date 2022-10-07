@@ -9,6 +9,10 @@ const routes: Routes = [
   { path: 'details', component: EditRecipyComponent },
   { path: '', component: RecepiesListComponent },
   { path: 'createRecipy', component: RecipeCreationComponent },
+  {
+    path: 'commons',
+    loadChildren: () => import('./common/common.module').then((m) => m.default),
+  },
 ];
 
 @NgModule({
