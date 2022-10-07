@@ -23,11 +23,11 @@
 
           <p class="card-text">
             <label> Prep Time: </label>
-            {{ item.prepTime }}
+            {{ item.prepTime | cookTime }}
           </p>
           <p *ngIf="item.cookingTime" class="card-text">
             <label> Cooking Time: </label>
-            {{ item.cookingTime }}
+            {{ item.cookingTime | cookTime }}
           </p>
           <p class="card-text">
             <label> Rating: </label>

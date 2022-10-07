@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DetailsRecipyComponent } from './details-recipy/details-recipy.component';
 import { EditRecipyComponent } from './edit-recipy/edit-recipy.component';
 import { RecepiesListComponent } from './recepies-list/recepies-list.component';
 import { RecipeCreationComponent } from './recipe-creation/recipe-creation.component';

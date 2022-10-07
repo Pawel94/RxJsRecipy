@@ -8,7 +8,7 @@ export interface Recipe {
   tags?: string;
   imageUrl?: string;
   cookingTime?: number;
-  prepTime?: number | string;
+  prepTime?: number;
   yield?: number;
   steps?: string;
   rating?: number;
